@@ -1,0 +1,26 @@
+[env]
+TERM = "xterm-256color"
+
+[window]
+opacity = 0.8
+decorations = "None"
+blur = true
+dynamic_title = false
+
+[font]
+normal.family = "JetBrainsMono Nerd Font"
+bold.family = "JetBrainsMono Nerd Font"
+italic.family = "JetBrainsMono Nerd Font"
+bold_italic.family = "JetBrainsMono Nerd Font"
+size = 11
+
+[colors]
+transparent_background_colors = true
+
+[mouse]
+hide_when_typing = true
+
+[keyboard]
+# bindings = [
+#   { key = "C", mods = "Control", chars = "\\x03" },
+# ]
