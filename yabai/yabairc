@@ -1,0 +1,61 @@
+#!/usr/bin/env sh
+
+# for this to work you must configure sudo such that
+# it will be able to run the command without password
+#
+# see this wiki page for information:
+#  - https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)#configure-scripting-addition
+#
+sudo nvram boot-args=-arm64e_preview_abi
+sudo yabai --uninstall-sa
+sudo yabai --install-sa
+sudo yabai --load-sa
+
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+#
+
+# global settings
+yabai -m config layout                      bsp
+yabai -m config top_padding                 8
+yabai -m config bottom_padding              8
+yabai -m config left_padding                8
+yabai -m config right_padding               8
+yabai -m config window_gap                  8
+
+yabai -m config mouse_follows_focus         off
+yabai -m config focus_follows_mouse         off
+
+yabai -m config window_topmost              off
+yabai -m config window_opacity              off
+yabai -m config window_shadow               float
+yabai -m config auto_balance                off
+
+yabai -m config mouse_modifier              fn
+yabai -m config mouse_action1               move
+yabai -m config mouse_action2               resize
+yabai -m config external_bar 		            off:32:0
+
+
+yabai -m config window_border               on
+yabai -m config window_border_width         8
+yabai -m config active_window_border_color  0xE032CD32
+yabai -m config normal_window_border_color  0xE02d74da
+
+yabai -m config menubar_opacity 1.0
+
+yabai -m rule --add app="^Safari$" space=^1
+yabai -m rule --add app="^Alacritty$" space=^2
+yabai -m rule --add app="^Bear$" space=^3
+yabai -m rule --add app="^(Discord|Messenger)$" space=^4
+yabai -m rule --add app="^Music$" space=^5
+
+yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
+yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance|Feature\ Flags)$" manage=off
+yabai -m rule --add label="Calculator" app="^Calculator$" manage=off layer=below
+yabai -m rule --add label="Dictionary" app="^Dictionary$" manage=off
+yabai -m rule --add label="Raycast" app="^Raycast$" manage=off
+yabai -m rule --add label="System Settings" app="^System Settings$" title=".*" manage=off
+
+yabai -m signal --add event=space_changed action="nohup open -g raycast://extensions/krzysztoff1/yabai/screens-menu-bar?launchType=background > /dev/null 2>&1 &"
+
+echo "yabai configuration loaded.."
