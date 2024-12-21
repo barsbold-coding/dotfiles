@@ -1,0 +1,35 @@
+snippet func "function declaration"
+	func $1($2) $3 {
+		$0
+	}
+
+snippet print "Println statement"
+	fmt.Println($1);
+
+snippet if "if statement"
+	if $1 {
+		$0
+	}
+
+snippet ifel "if and else statements"
+	if $1 {
+		$2
+	} else {
+		$3
+	}$0
+
+
+snippet fori "for loop"
+	for ${1:i} := ${2:0}; ${3:1}; ${4:1} {
+		$0
+	}
+
+snippet for "loop like while"
+	for $1 {
+		$0
+	}
+
+snippet forr "loop over range"
+	for ${1:i}, ${2:v} := range $3 {
+		$0
+	}

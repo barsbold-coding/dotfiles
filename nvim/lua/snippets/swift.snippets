@@ -1,0 +1,14 @@
+snippet if "if statement"
+  if $1 {
+    $2
+  }$0
+
+snippet ifl "if let"
+  if let $1 = ${2:$1} {
+    $3
+  }$0
+
+snippet func "function declaration"
+  func $1($2) $3{
+    $0
+  }

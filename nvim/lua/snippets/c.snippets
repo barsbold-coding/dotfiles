@@ -1,0 +1,20 @@
+snippet include "#include <header.h>"
+	#include <${1:stdio.h}>
+
+snippet print "printf"
+	printf("${1:%d}\n", $2);
+
+snippet if "if statement"
+	if ($1) {
+		$2
+	}$0
+
+snippet fori "for loop with variable i"
+	for (int ${1:i} = $2; ${3:i} < $4; ${5:i++}) {
+		$6
+	}$0
+
+snippet func "function declaration"
+	${1:void} ${2:foo}($3) {
+		$0
+	}
