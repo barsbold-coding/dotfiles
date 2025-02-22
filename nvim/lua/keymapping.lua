@@ -41,4 +41,9 @@ map("v", ">", ">gv", { noremap = true, silent = true })
 map("n", "<C-n>", ":m .-2<CR>==", { noremap = true, silent = true })
 map("n", "<C-t>", ":m .+1<CR>==", { noremap = true, silent = true })
 
+map("n", "<leader>gl", ":Gitsign")
+
+map("n", "<leader>o", "<C-o>", { noremap = true })
+map("n", "<leader>i", "<C-i>", { noremap = true })
+
 return map

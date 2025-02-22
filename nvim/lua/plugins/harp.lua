@@ -12,9 +12,6 @@ map("n", "<leader>md", function() harpoon:list():remove() end)
 map("n", "<leader>mh", function() harpoon:list():prev() end)
 map("n", "<leader>ms", function() harpoon:list():next() end)
 
-local harpoon = require('harpoon')
-harpoon:setup({})
-
 -- basic telescope configuration
 local conf = require("telescope.config").values
 local function toggle_telescope(harpoon_files)

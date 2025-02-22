@@ -24,7 +24,7 @@ require("lazy").setup({
       dependencies = { "nvim-lua/plenary.nvim" }
   },
   'rebelot/kanagawa.nvim',
-  {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'},
+  {'nvim-treesitter/nvim-treesitter'},
 
   'neovim/nvim-lspconfig',
   'hrsh7th/cmp-nvim-lsp',
@@ -74,24 +74,9 @@ require("lazy").setup({
     build = "make install_jsregexp"
   },
 
-  {
-    'zbirenbaum/copilot.lua',
-    config = function ()
-      require('copilot').setup({})
-    end
-  },
-
-  {
-    "zbirenbaum/copilot-cmp",
-    config = function ()
-      require("copilot_cmp").setup({
-        suggestion = { enabled = false },
-        panel = { enabled = false },
-      })
-    end
-  },
-
   'ThePrimeagen/vim-be-good',
+
+  'hedyhli/outline.nvim',
 })
 
 pcall(require, 'plugins.leap')
@@ -106,6 +91,7 @@ pcall(require, 'plugins.stal')
 pcall(require, 'plugins.surr')
 pcall(require, 'plugins.tree')
 pcall(require, 'plugins.sign')
+pcall(require, 'plugins.outl')
 -- pcall(require, 'plugins.copi')
 require('scrollbar').setup()
 
